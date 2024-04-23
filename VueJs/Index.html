@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 200px;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- Thuis for displaying some dt from vue js in script -->
+        <h2>{{Fnme}}</h2>
+
+
+        <!-- This for binding some dt from vue script -->
+        <img v-bind:src="imgscr" :alt="alt">
+
+
+        <!-- This for vue if conditions -->
+        <h2 v-if=" age >30">Age is greater than 30</h2>
+        <h2 v-else-if="age<30">Age is less than 30</h2>
+        <h2 v-else>Age is not eqeal to 30</h2>
+
+
+        <!-- Different btn V-if && V-show -->
+        <h3 v-if=" age >30">Age is greater than 30 by using vif</h3>
+        <h3 v-show=" age >30">Age is greater than 30 by ushing v-show</h3>
+
+        <!-- Loop in Vuejs -->
+        <h2 v-for="i in myArray">Hello Loop</h2>
+        <h2 v-for="i in myHobby">My Hobbies are {{i}}</h2>
+
+
+
+        <!-- Event with Vuejs -->
+        <!-- without using function -->
+        <!-- <p>{{counter}}</p>
+        <h4 v-if="counter > 10">Counter is greater than 10</h4>
+        <h4 v-else-if="counter<10">Counter is less than 10</h4>
+        <h4 v-else>Counter is Equal to 10</h4>
+        <button @click="counter--">Decrement</button>
+        <button v-on:click="counter++">Increment</button> -->
+
+        <!-- By using function -->
+        <p>{{counter}}</p>
+        <button @click="Increment()">Increment</button>
+        <button @click="decrement()">decrement</button> <br> <br>
+
+
+        <!-- <input type="text" v-model="Text">
+         <p>Input value:{{Text}}</p> -->
+
+
+        <input type="text" v-model="Age">
+         <p>Input value:{{Age}}</p>
+         <h2 v-if="Age > 10">your Age is greater than 10</h2>
+         <h2 v-else-if="Age < 10">your Age is less than 10</h2>
+         <h2 v-else>your Age is Equal to 10</h2>
+
+         
+         <button @click="showButton">Hide/Show</button>
+         <p v-if="Show">
+            Helloe this Show function
+         </p>
+         <p v-else>Nope</p>
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    Text:'',
+                    Age:'',
+                    counter: 0,
+                    alt: 'This binding alternative text',
+                    imgscr: 'img/smple.jpg',
+                    Fnme: 'john ',
+                    Lnme: 'Doe',
+                    gender: 'Mle',
+                    myHobby: ["Cake", "SugerCne"],
+                    myArray: [1, 2, 3, 4, 5],
+                    Show:true
+                }
+            },
+            methods: {
+                Increment() {
+                    this.counter++;
+                },
+                decrement() {
+                    if (this.counter-- > 0) {
+                        this.counter--;
+                    }
+                    else {
+                        console.log("false");
+                    }
+                },
+                showButton(){
+                    this.Show=!(this.Show)
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
