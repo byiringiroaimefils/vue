@@ -24,7 +24,6 @@
         <!-- This for binding some dt from vue script -->
         <img v-bind:src="imgscr" :alt="alt">
 
-
         <!-- This for vue if conditions -->
         <h2 v-if=" age >30">Age is greater than 30</h2>
         <h2 v-else-if="age<30">Age is less than 30</h2>
@@ -61,17 +60,17 @@
 
 
         <input type="text" v-model="Age">
-         <p>Input value:{{Age}}</p>
-         <h2 v-if="Age > 10">your Age is greater than 10</h2>
-         <h2 v-else-if="Age < 10">your Age is less than 10</h2>
-         <h2 v-else>your Age is Equal to 10</h2>
+        <p>Input value:{{Age}}</p>
+        <h2 v-if="Age > 10">your Age is greater than 10</h2>
+        <h2 v-else-if="Age < 10">your Age is less than 10</h2>
+        <h2 v-else>your Age is Equal to 10</h2>
 
-         
-         <button @click="showButton">Hide/Show</button>
-         <p v-if="Show">
+
+        <button @click="showButton">Hide/Show</button>
+        <p v-if="Show">
             Helloe this Show function
-         </p>
-         <p v-else>Nope</p>
+        </p>
+        <p v-else>Nope</p>
     </div>
 
 
@@ -80,8 +79,8 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    Text:'',
-                    Age:'',
+                    Text: '',
+                    Age: '',
                     counter: 0,
                     alt: 'This binding alternative text',
                     imgscr: 'img/smple.jpg',
@@ -90,7 +89,7 @@
                     gender: 'Mle',
                     myHobby: ["Cake", "SugerCne"],
                     myArray: [1, 2, 3, 4, 5],
-                    Show:true
+                    Show: true
                 }
             },
             methods: {
@@ -105,8 +104,8 @@
                         console.log("false");
                     }
                 },
-                showButton(){
-                    this.Show=!(this.Show)
+                showButton() {
+                    this.Show = !(this.Show)
                 }
             }
         })
