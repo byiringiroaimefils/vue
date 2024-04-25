@@ -1,6 +1,8 @@
 <template >
-  <input type="number" v-model="Cel" v-on:input="updateCel" />
-  <input type="number" v-model="Fahr" v-on:input="updateFahr" />
+<div>
+    <input type="number" v-model="Cel" v-on:input="updateCel" placeholder="Cel" />
+    <input type="number" v-model="Fahr" v-on:input="updateFahr"  placeholder="Farh"/>
+  </div>
 
   <!-- <p>{{ Fahr }}</p>
   <button @click="updateFahr">click</button> -->
@@ -26,4 +28,7 @@ export default {
 </script>
 
 <style>
+div{
+  margin-top: 5px;
+}
 </style>
