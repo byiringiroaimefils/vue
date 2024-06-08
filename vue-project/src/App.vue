@@ -4,18 +4,21 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
+  <RouterView >
+
+    <header>
+      <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/Calculator">Calculator</RouterLink>
-        <RouterLink to="/TeamView">TeamView</RouterLink>
+        <RouterLink to="/Calculator">Calculators</RouterLink>
+        <RouterLink to="/TeamView">TeamViews</RouterLink>
         <RouterLink to="/Convertor">Convertor</RouterLink>
       </nav>
+    </header>
+  
     </div>
-  </header>
-
-  <RouterView />
+    <RouterView />
+    <RouterView/>
 </template>
 
 <style>
